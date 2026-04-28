@@ -1,0 +1,169 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|d:\\_sviluppo\\scorciatoie\\scorciatoie_v6.2\\scorciatoie_v6_2.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|solutionrelative:scorciatoie_v6_2.vbproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|d:\\_sviluppo\\scorciatoie\\scorciatoie_v6.2\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|solutionrelative:form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|d:\\_sviluppo\\scorciatoie\\scorciatoie_v6.2\\frmmulticlipboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|solutionrelative:frmmulticlipboard.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|d:\\_sviluppo\\scorciatoie\\scorciatoie_v6.2\\modfunzioni.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|solutionrelative:modfunzioni.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|d:\\_sviluppo\\scorciatoie\\scorciatoie_v6.2\\modvar.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|solutionrelative:modvar.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|d:\\_sviluppo\\scorciatoie\\scorciatoie_v6.2\\frmimpostazioni.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|solutionrelative:frmimpostazioni.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|d:\\_sviluppo\\scorciatoie\\scorciatoie_v6.2\\frmimpostazioni.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|solutionrelative:frmimpostazioni.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|d:\\_sviluppo\\scorciatoie\\scorciatoie_v6.2\\frmelementsgroup.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|solutionrelative:frmelementsgroup.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|d:\\_sviluppo\\scorciatoie\\scorciatoie_v6.2\\frmelementsgroup.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{99CF1C58-51EB-4F5C-9E14-CAA2E219A8C6}|Scorciatoie_V6_2.vbproj|solutionrelative:frmelementsgroup.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Scorciatoie_V6_2",
+              "DocumentMoniker": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\Scorciatoie_V6_2.vbproj",
+              "RelativeDocumentMoniker": "Scorciatoie_V6_2.vbproj",
+              "ToolTip": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\Scorciatoie_V6_2.vbproj",
+              "RelativeToolTip": "Scorciatoie_V6_2.vbproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003380|",
+              "WhenOpened": "2025-01-17T13:12:04.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmMultiClipboard.vb",
+              "DocumentMoniker": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmMultiClipboard.vb",
+              "RelativeDocumentMoniker": "frmMultiClipboard.vb",
+              "ToolTip": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmMultiClipboard.vb",
+              "RelativeToolTip": "frmMultiClipboard.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-26T11:53:06.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "modVar.vb",
+              "DocumentMoniker": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\modVar.vb",
+              "RelativeDocumentMoniker": "modVar.vb",
+              "ToolTip": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\modVar.vb",
+              "RelativeToolTip": "modVar.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-26T11:51:11.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "modFunzioni.vb",
+              "DocumentMoniker": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\modFunzioni.vb",
+              "RelativeDocumentMoniker": "modFunzioni.vb",
+              "ToolTip": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\modFunzioni.vb",
+              "RelativeToolTip": "modFunzioni.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-26T11:47:48.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmImpostazioni.vb [Progettazione]",
+              "DocumentMoniker": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmImpostazioni.vb",
+              "RelativeDocumentMoniker": "frmImpostazioni.vb",
+              "ToolTip": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmImpostazioni.vb [Progettazione]",
+              "RelativeToolTip": "frmImpostazioni.vb [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-26T11:37:49.161Z",
+              "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmImpostazioni.vb",
+              "DocumentMoniker": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmImpostazioni.vb",
+              "RelativeDocumentMoniker": "frmImpostazioni.vb",
+              "ToolTip": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmImpostazioni.vb",
+              "RelativeToolTip": "frmImpostazioni.vb",
+              "ViewState": "AQIAAKsBAAAAAAAAAAAnwN0BAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-26T11:34:21.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.vb [Progettazione]",
+              "DocumentMoniker": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\Form1.vb",
+              "RelativeDocumentMoniker": "Form1.vb",
+              "ToolTip": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\Form1.vb [Progettazione]",
+              "RelativeToolTip": "Form1.vb [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-26T11:28:59.524Z",
+              "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmElementsGroup.vb [Progettazione]",
+              "DocumentMoniker": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmElementsGroup.vb",
+              "RelativeDocumentMoniker": "frmElementsGroup.vb",
+              "ToolTip": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmElementsGroup.vb [Progettazione]",
+              "RelativeToolTip": "frmElementsGroup.vb [Progettazione]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-26T11:25:44.133Z",
+              "EditorCaption": " [Progettazione]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmElementsGroup.vb",
+              "DocumentMoniker": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmElementsGroup.vb",
+              "RelativeDocumentMoniker": "frmElementsGroup.vb",
+              "ToolTip": "D:\\_Sviluppo\\Scorciatoie\\Scorciatoie_V6.2\\frmElementsGroup.vb",
+              "RelativeToolTip": "frmElementsGroup.vb",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwKoCAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-26T11:22:33.202Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

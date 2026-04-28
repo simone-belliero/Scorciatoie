@@ -1,0 +1,47 @@
+AdminTools	48	Directory del file system usata per archiviare strumenti amministrativi per un singolo utente. Microsoft Management Console (MMC) salverà le console personalizzate in questa directory e verrà eseguito il roaming.
+ApplicationData	26	Directory usata come repository comune dei dati specifici dell'applicazione per l'utente roaming corrente. Un utente mobile lavora su più computer di una rete. Il profilo di un utente mobile viene conservato in un server della rete e viene caricato in un sistema quando l'utente esegue l'accesso.
+CDBurning	59	Directory del file system che viene usata come un'area di gestione temporanea per i file in attesa di essere scritti su un CD.
+CommonAdminTools	47	Directory del file system che contiene strumenti amministrativi per tutti gli utenti del computer.
+CommonApplicationData	35	Directory usata come repository comune dei dati specifici dell'applicazione usati da tutti gli utenti.
+CommonDesktopDirectory	25	Directory del file system che contiene file e cartelle che vengono visualizzati sul desktop di tutti gli utenti.
+CommonDocuments	46	Directory del file system che contiene documenti comuni a tutti gli utenti.
+CommonMusic	53	Directory del file system che viene usata come repository per i file musicali comuni a tutti gli utenti.
+CommonOemLinks	58	Questo valore è riconosciuto in Windows Vista per la compatibilità con le versioni precedenti, ma la cartella speciale non è più usata.
+CommonPictures	54	Directory del file system che viene usata come repository per i file di immagine comuni a tutti gli utenti.
+CommonProgramFiles	43	Directory per i componenti condivisi da più applicazioni.Per ottenere la directory dei file di programma comuni x86 in un processo non x86, usare il membro ProgramFilesX86.
+CommonProgramFilesX86	44	Cartella Programmi.
+CommonPrograms	23	Cartella per i componenti condivisi da più applicazioni.
+CommonStartMenu	22	Directory del file system che contiene i programmi e le cartelle che vengono visualizzati nel menu Start per tutti gli utenti.
+CommonStartup	24	Directory del file system che contiene i programmi che vengono visualizzati nella cartella Avvio per tutti gli utenti.
+CommonTemplates	45	Directory del file system che contiene i modelli disponibili per tutti gli utenti.
+CommonVideos	55	Directory del file system che viene usata come repository per i file video comuni a tutti gli utenti.
+Cookies	33	Directory usata come repository comune dei cookie di Internet.
+Desktop	0	Desktop logico anziché percorso fisico del file system.
+DesktopDirectory	16	Directory usata per archiviare fisicamente gli oggetti file sul desktop. Non confondere questa directory con la cartella desktop, che è una cartella virtuale.
+Favorites	6	Directory usata come repository degli elementi preferiti dell'utente.
+Fonts	20	Cartella virtuale che contiene i tipi di carattere.
+History	34	Directory usata come repository comune degli elementi della cronologia di Internet.
+InternetCache	32	Directory usata come repository comune dei file temporanei Internet.
+LocalApplicationData	28	Directory usata come repository comune dei dati specifici dell'applicazione usati dall'utente non roaming corrente.
+LocalizedResources	57	Directory del file system che contiene i dati di risorsa localizzati.
+MyComputer	17	Cartella Risorse del computer. Quando viene passato al metodo Environment.GetFolderPath, il membro di enumerazione MyComputer restituisce sempre la stringa vuota ("") perché non è definito alcun percorso per la cartella Risorse del computer.
+MyDocuments	5	Cartella Documenti. Questo membro equivale a Personal.
+MyMusic	13	Cartella Musica.
+MyPictures	39	Cartella Immagini.
+MyVideos	14	Directory del file system che viene usata come repository per i video che appartengono a un utente.
+NetworkShortcuts	19	Directory del file system che contiene gli oggetti collegamento che esistono nella cartella virtuale Risorse di rete.
+Personal	5	Directory usata come repository comune dei documenti. Questo membro equivale a MyDocuments.
+PrinterShortcuts	27	Directory del file system che contiene gli oggetti collegamento che possono esistere nella cartella virtuale Stampanti.
+ProgramFiles	38	Directory dei programmi.In un processo non x86, il passaggio di ProgramFiles al metodo GetFolderPath(Environment+SpecialFolder) restituisce il percorso dei programmi non x86. Per ottenere la directory dei file di programma x86 in un processo non x86, usare il membro ProgramFilesX86.
+ProgramFilesX86	42	Cartella Programmi x86.
+Programs	2	Directory contenente i gruppi di programmi dell'utente.
+Recent	8	Directory contenente i documenti usati di recente dall'utente.
+Resources	56	Directory del file system che contiene i dati di risorsa.
+SendTo	9	Directory contenente le voci del menu Invia a.
+StartMenu	11	Directory contenente le voci del menu Start.
+Startup	7	Directory corrispondente al gruppo di programmi di Esecuzione automatica dell'utente. Il sistema avvia questi programmi ogni volta che un utente avvia o accede a Windows.
+System	37	Directory System.
+SystemX86	41	Cartella System di Windows.
+Templates	21	Directory usata come repository comune dei modelli di documenti.
+UserProfile	40	Cartella del profilo dell'utente. Le applicazioni non devono creare file o cartelle a questo livello; devono inserire i dati nei percorsi a cui fa riferimento il campo ApplicationData.
+Windows	36	Directory di Windows o SYSROOT. Corrisponde alle variabili di ambiente %windir% o %SYSTEMROOT%.
