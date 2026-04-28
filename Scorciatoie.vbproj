@@ -71,4 +71,12 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Forms\" />
+    <Folder Include="Modules\" />
+    <Folder Include="Classes\" />
+    <Folder Include="Core\" />
+    <Folder Include="Resources\" />
+  </ItemGroup>
+
 </Project>
