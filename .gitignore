@@ -1,0 +1,19 @@
+# Visual Studio / .NET
+.vs/
+bin/
+obj/
+*.user
+*.pdb
+*.exe
+*.dll
+*.cache
+*.log
+
+# Backup e temporanei
+*.bak
+*.tmp
+Thumbs.db
+.DS_Store
+
+# Configurazione locale
+Scorciatoie_V6_3.vbproj.user
