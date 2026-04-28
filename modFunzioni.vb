@@ -15,7 +15,7 @@ Module modFunzioni
 		Try
 
 
-			Dim pp = My.Computer.FileSystem.ReadAllText(MyPath & "cfg.ini")
+			Dim pp = My.Computer.FileSystem.ReadAllText(My_Settings.MyPath & "cfg.ini")
 
 			myInifile.Load(MyIniFilePath)
 
@@ -26,24 +26,24 @@ Module modFunzioni
 			'[main]
 			' COSTANTE => "|"    _ini_split_char = myInifile.GetKeyValue_String("main", "_ini_split_char")
 			'_form_number = myInifile.GetKeyValue_Integer("main", "_form_number")
-			_offset_position = myInifile.GetKeyValue_Integer("main", "_offset_position")
+			My_Settings.DefaultOffset = myInifile.GetKeyValue_Integer("main", "My_Settings.DefaultOffset")
 			_width = myInifile.GetKeyValue_Integer("main", "_width")
-			_link_file_name = myInifile.GetKeyValue_String("main", "_link_file_name")
+			My_Settings.LinkFileName = myInifile.GetKeyValue_String("main", "My_Settings.LinkFileName")
 
-			mySize = New Size(_width, 5)
+			My_Settings.BarSize = New Size(_width, 5)
 
 			'[clipboard]
-			_clipboard_close_color = DaStringRgbAColor(myInifile.GetKeyValue_String("clipboard", "_clipboard_close_color"), ",")
-			_clipboard_open_color = DaStringRgbAColor(myInifile.GetKeyValue_String("clipboard", "_clipboard_open_color"), ",")
+			My_Settings.ClipboardCloseColor = DaStringRgbAColor(myInifile.GetKeyValue_String("clipboard", "My_Settings.ClipboardCloseColor"), ",")
+			My_Settings.ClipboardOpenColor  = DaStringRgbAColor(myInifile.GetKeyValue_String("clipboard", "My_Settings.ClipboardOpenColor "), ",")
 			_clipboard_text_color = DaStringRgbAColor(myInifile.GetKeyValue_String("clipboard", "_clipboard_text_color"), ",")
 			_clipboard_elements_number = myInifile.GetKeyValue_Integer("clipboard", "_clipboard_elements_number")
 
 			'	_clipboard_fixed_lines = myInifile.GetKeyValue_String("clipboard_fixed_lines", "array").Split(";").ToList
 
 			'[fixedtext]
-			_fixedtext_close_color = DaStringRgbAColor(myInifile.GetKeyValue_String("fixedtext", "_fixedtext_close_color"), ",")
-			_fixedtext_open_color = DaStringRgbAColor(myInifile.GetKeyValue_String("fixedtext", "_fixedtext_open_color"), ",")
-			_fixedtext_text_color = DaStringRgbAColor(myInifile.GetKeyValue_String("fixedtext", "_fixedtext_text_color"), ",")
+			My_Settings.FixedTextCloseColor = DaStringRgbAColor(myInifile.GetKeyValue_String("fixedtext", "My_Settings.FixedTextCloseColor"), ",")
+			My_Settings.FixedTextOpenColor = DaStringRgbAColor(myInifile.GetKeyValue_String("fixedtext", "My_Settings.FixedTextOpenColor"), ",")
+			My_Settings.FixedTextTextColor = DaStringRgbAColor(myInifile.GetKeyValue_String("fixedtext", "My_Settings.FixedTextTextColor"), ",")
 			_fixedtext_elements_number = myInifile.GetKeyValue_Integer("fixedtext", "_fixedtext_elements_number")
 
 			_fixedtext_fixed_lines = myInifile.GetKeyValue_String("fixedtext_fixed_lines", "array").Split(";").ToList
@@ -60,7 +60,7 @@ Module modFunzioni
 
 	Function LoadGroupsConfiguration()
 		LinkList.Clear()
-		Dim tx As String = My.Computer.FileSystem.ReadAllText(MyPath & _link_file_name)
+		Dim tx As String = My.Computer.FileSystem.ReadAllText(My_Settings.MyPath & My_Settings.LinkFileName)
 
 		tx = tx.Substring(("[form]" & vbCrLf).Length)
 
@@ -75,7 +75,7 @@ Module modFunzioni
 		For Each F In LinkList
 			If F <> "" Then
 				Dim frm As New frmElementsGroup
-				FormList.Add(frm)
+				My_Settings.Groups.Add(frm)
 			End If
 			Dim a = 0
 		Next
@@ -83,46 +83,46 @@ Module modFunzioni
 		Dim c As Integer = 0
 		For Each f In LinkList
 			Dim S() As String = (f).Split(vbCrLf)
-			FormList(c).ElementList.Clear()
+			My_Settings.Groups(c).ElementList.Clear()
 
 			For Each T As String In S
 				If T.ToLower.StartsWith("color:") Then
 					T = T.Substring(6).Trim
 					_closed_color(c) = DaStringRgbAColor(T, ";")
-					FormList(c).ClosedColor = DaStringRgbAColor(T, ";")
+					My_Settings.Groups(c).ClosedColor = DaStringRgbAColor(T, ";")
 
 					Dim a = 0
 				ElseIf T.ToLower.StartsWith("back_color:") Then
 					T = T.Substring(11).Trim
 					_opened_color(c) = DaStringRgbAColor(T, ";")
-					FormList(c).OpenedColor = DaStringRgbAColor(T, ";")
+					My_Settings.Groups(c).OpenedColor = DaStringRgbAColor(T, ";")
 					Dim a = 0
 
 				ElseIf T.ToLower.StartsWith("text_color:") Then
 					T = T.Substring(11).Trim
 					_text_color(c) = DaStringRgbAColor(T, ";")
-					FormList(c).TextColor = DaStringRgbAColor(T, ";")
+					My_Settings.Groups(c).TextColor = DaStringRgbAColor(T, ";")
 					Dim a = 0
 
 				ElseIf T.ToLower.StartsWith("separator:") Then
 					T = "--------------------"
 					Dim E = New Element(T)
 					E.Element_Type = Element.ElementType.separator
-					FormList(c).ElementList.Add(E)
+					My_Settings.Groups(c).ElementList.Add(E)
 					Dim a = 0
 
 				ElseIf T.ToLower.StartsWith("special_folder:") Then
 					T = T.Substring(15).Trim
 					Dim E = New Element(T)
 					E.Element_Type = Element.ElementType.special_folder
-					FormList(c).ElementList.Add(E)
+					My_Settings.Groups(c).ElementList.Add(E)
 					Dim a = 0
 
 				ElseIf T.ToLower.StartsWith("link:") Then
 					T = T.Substring(5).Trim
 					Dim E = New Element(T)
 					E.Element_Type = Element.ElementType.general
-					FormList(c).ElementList.Add(E)
+					My_Settings.Groups(c).ElementList.Add(E)
 					Dim a = 0
 				End If
 			Next
@@ -137,7 +137,7 @@ Module modFunzioni
 	Sub WriteShorcutFile() 'frm As frmElementsGroup)
 		Dim T As String = ""
 
-		For Each frm In FormList
+		For Each frm In My_Settings.Groups
 
 			T &= IIf(T <> "", vbCrLf, "") & "[form]"
 			T &= vbCrLf & "color:" & DaColorAStringRgb(frm.ClosedColor, ";")
@@ -166,7 +166,7 @@ Module modFunzioni
 			Dim a = 0
 		Next
 
-		My.Computer.FileSystem.WriteAllText(MyPath & _link_file_name, T, False)
+		My.Computer.FileSystem.WriteAllText(My_Settings.MyPath & My_Settings.LinkFileName, T, False)
 
 	End Sub
 
@@ -187,7 +187,7 @@ Module modFunzioni
 		T &= "link:" & L & vbCrLf
 
 
-		My.Computer.FileSystem.WriteAllText(MyPath & _link_file_name, T, True)
+		My.Computer.FileSystem.WriteAllText(My_Settings.MyPath & My_Settings.LinkFileName, T, True)
 
 		Dim El = New Element(L)
 
@@ -773,7 +773,7 @@ Module modFunzioni
 
 	Sub ScriviLog(testo As String, TipoLog As TipoLog, show_message As Boolean)
 		Dim s As String = ""
-		Dim nome_directory_log = MyPath & "\log\"
+		Dim nome_directory_log = My_Settings.MyPath & "\log\"
 		Dim nome_file_log = "log_" & Now().ToString("yyyyMMdd") & ".log"
 		Select Case TipoLog
 			Case TipoLog.errore
@@ -786,7 +786,7 @@ Module modFunzioni
 				s = "Log - " & Now().ToString("yyyy.MM.dd") & " " & testo
 				If show_message Then MsgBox(testo, MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Log")
 		End Select
-		If Not My.Computer.FileSystem.DirectoryExists(MyPath & "\log") Then My.Computer.FileSystem.CreateDirectory(nome_directory_log)
+		If Not My.Computer.FileSystem.DirectoryExists(My_Settings.MyPath & "\log") Then My.Computer.FileSystem.CreateDirectory(nome_directory_log)
 		My.Computer.FileSystem.WriteAllText(nome_directory_log & nome_file_log, s, True)
 
 	End Sub

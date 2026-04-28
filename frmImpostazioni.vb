@@ -22,12 +22,12 @@ Public Class frmImpostazioni
 
         gbFolders.Visible = False
 
-        numWidth.Value = mySize.Width
-        numOffset.Value = _offset_position
+        numWidth.Value = My_Settings.BarSize.Width
+        numOffset.Value = My_Settings.DefaultOffset
 
         numFormIndex.Value = 1
 
-        numFormIndex.Maximum = FormList.Count
+        numFormIndex.Maximum = My_Settings.Groups.Count
 
         _idx = 0
 
@@ -36,10 +36,10 @@ Public Class frmImpostazioni
 
         loadFormvalues(_idx)
 
-        btDeleteForm.Enabled = FormList.Count > 1
+        btDeleteForm.Enabled = My_Settings.Groups.Count > 1
 
-        btDeleteForm.Enabled = FormList.Count > 1
-        btNewForm.Enabled = FormList.Count < 10
+        btDeleteForm.Enabled = My_Settings.Groups.Count > 1
+        btNewForm.Enabled = My_Settings.Groups.Count < 10
 
 
         CheckBox1.Checked = False
@@ -53,7 +53,7 @@ Public Class frmImpostazioni
         CheckBox9.Checked = False
         CheckBox10.Checked = False
 
-        For Each El In FormList(_idx).ElementList
+        For Each El In My_Settings.Groups(_idx).ElementList
             If El.Element_Type = Element.ElementType.special_folder Then
 
 
@@ -85,15 +85,15 @@ Public Class frmImpostazioni
         Next
 
 
-        lbColorClipboard.BackColor = _clipboard_close_color
-        lbBackColorClipboard.BackColor = _clipboard_open_color
+        lbColorClipboard.BackColor = My_Settings.ClipboardCloseColor
+        lbBackColorClipboard.BackColor = My_Settings.ClipboardOpenColor 
         lbTextColorClipboard.BackColor = _clipboard_text_color
 
-        numElementsNumber.Value = _clipboard_elements_number
+        numElementsNumber.Value =My_Settings.ClipboardElementsNumber
 
-        lbColorFixed.BackColor = _fixedtext_close_color
-        lbBackColorFixed.BackColor = _fixedtext_open_color
-        lbTextColorFixed.BackColor = _fixedtext_text_color
+        lbColorFixed.BackColor = My_Settings.FixedTextCloseColor
+        lbBackColorFixed.BackColor = My_Settings.FixedTextOpenColor
+        lbTextColorFixed.BackColor = My_Settings.FixedTextTextColor
 
 
         Dim T As String = ""
@@ -110,22 +110,22 @@ Public Class frmImpostazioni
 
     Private Sub frmImpostazioni_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
-        FormList(_idx).PopolaForm()
+        My_Settings.Groups(_idx).PopolaForm()
 
-        mySize = New Size(numWidth.Value, 5)
-        _offset_position = numOffset.Value
+        My_Settings.BarSize = New Size(numWidth.Value, 5)
+        My_Settings.DefaultOffset = numOffset.Value
 
         myInifile.SetKeyValue_Integer("main", "_width", numWidth.Value)
-        myInifile.SetKeyValue_Integer("main", "_offset_position", _offset_position)
+        myInifile.SetKeyValue_Integer("main", "My_Settings.DefaultOffset", My_Settings.DefaultOffset)
 
-        myInifile.SetKeyValue_String("clipboard", "_clipboard_close_color", DaColorAStringRgb(_clipboard_close_color, ","))
-        myInifile.SetKeyValue_String("clipboard", "_clipboard_open_color", DaColorAStringRgb(_clipboard_open_color, ","))
+        myInifile.SetKeyValue_String("clipboard", "My_Settings.ClipboardCloseColor", DaColorAStringRgb(My_Settings.ClipboardCloseColor, ","))
+        myInifile.SetKeyValue_String("clipboard", "My_Settings.ClipboardOpenColor ", DaColorAStringRgb(My_Settings.ClipboardOpenColor , ","))
         myInifile.SetKeyValue_String("clipboard", "_clipboard_text_color", DaColorAStringRgb(_clipboard_text_color, ","))
-        myInifile.SetKeyValue_Integer("clipboard", "_clipboard_elements_number", _clipboard_elements_number)
+        myInifile.SetKeyValue_Integer("clipboard", "_clipboard_elements_number",My_Settings.ClipboardElementsNumber)
 
-        myInifile.SetKeyValue_String("fixedtext", "_fixedtext_close_color", DaColorAStringRgb(_fixedtext_close_color, ","))
-        myInifile.SetKeyValue_String("fixedtext", "_fixedtext_open_color", DaColorAStringRgb(_fixedtext_open_color, ","))
-        myInifile.SetKeyValue_String("fixedtext", "_fixedtext_text_color", DaColorAStringRgb(_fixedtext_text_color, ","))
+        myInifile.SetKeyValue_String("fixedtext", "My_Settings.FixedTextCloseColor", DaColorAStringRgb(My_Settings.FixedTextCloseColor, ","))
+        myInifile.SetKeyValue_String("fixedtext", "My_Settings.FixedTextOpenColor", DaColorAStringRgb(My_Settings.FixedTextOpenColor, ","))
+        myInifile.SetKeyValue_String("fixedtext", "My_Settings.FixedTextTextColor", DaColorAStringRgb(My_Settings.FixedTextTextColor, ","))
 
 
         Dim T As String = ""
@@ -157,11 +157,11 @@ Public Class frmImpostazioni
             lbColor.BackColor = OCD.Color
         End If
 
-        FormList(_idx).ClosedColor = lbColor.BackColor
+        My_Settings.Groups(_idx).ClosedColor = lbColor.BackColor
 
         WriteShorcutFile()
 
-        FormList(_idx).PopolaForm()
+        My_Settings.Groups(_idx).PopolaForm()
     End Sub
 
     Private Sub lbBackColor_MouseClick(sender As Object, e As MouseEventArgs) Handles lbBackColor.MouseClick
@@ -173,11 +173,11 @@ Public Class frmImpostazioni
             lbBackColor.BackColor = OCD.Color
 
         End If
-        FormList(_idx).OpenedColor = lbBackColor.BackColor
+        My_Settings.Groups(_idx).OpenedColor = lbBackColor.BackColor
 
         WriteShorcutFile()
 
-        FormList(_idx).PopolaForm()
+        My_Settings.Groups(_idx).PopolaForm()
     End Sub
 
     Private Sub lbTextColor_MouseClick(sender As Object, e As MouseEventArgs) Handles lbTextColor.MouseClick
@@ -189,11 +189,11 @@ Public Class frmImpostazioni
             lbTextColor.BackColor = OCD.Color
 
         End If
-        FormList(_idx).TextColor = lbTextColor.BackColor
+        My_Settings.Groups(_idx).TextColor = lbTextColor.BackColor
 
         WriteShorcutFile()
 
-        FormList(_idx).PopolaForm()
+        My_Settings.Groups(_idx).PopolaForm()
     End Sub
 
     Private Sub chkAutomaticStart_CheckedChanged(sender As Object, e As EventArgs) Handles chkAutomaticStart.CheckedChanged
@@ -205,19 +205,19 @@ Public Class frmImpostazioni
     End Sub
 
     Private Sub lbApriGestione_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lbApriGestione.LinkClicked
-        Dim psi = New ProcessStartInfo(_link_file_name)
+        Dim psi = New ProcessStartInfo(My_Settings.LinkFileName)
         psi.UseShellExecute = True
         Process.Start(psi)
     End Sub
 
     Private Sub numFormIndex_ValueChanged(sender As Object, e As EventArgs) Handles numFormIndex.ValueChanged
         If Not primo_giro_fatto Then Exit Sub
-        FormList(_idx).PopolaForm()
+        My_Settings.Groups(_idx).PopolaForm()
         _idx = numFormIndex.Value - 1
         loadFormvalues(_idx)
 
-        btDeleteForm.Enabled = FormList.Count > 1
-        btNewForm.Enabled = FormList.Count < 10
+        btDeleteForm.Enabled = My_Settings.Groups.Count > 1
+        btNewForm.Enabled = My_Settings.Groups.Count < 10
 
         btMoveLeft.Enabled = numFormIndex.Value > 1
         btMoveRight.Enabled = numFormIndex.Value < numFormIndex.Maximum
@@ -226,20 +226,20 @@ Public Class frmImpostazioni
     Sub loadFormvalues(idx As Integer)
 
 
-        lbColor.BackColor = FormList(_idx).ClosedColor
-        lbBackColor.BackColor = FormList(_idx).OpenedColor
-        lbTextColor.BackColor = FormList(_idx).TextColor
+        lbColor.BackColor = My_Settings.Groups(_idx).ClosedColor
+        lbBackColor.BackColor = My_Settings.Groups(_idx).OpenedColor
+        lbTextColor.BackColor = My_Settings.Groups(_idx).TextColor
 
 
     End Sub
 
     Private Sub btMoveUp_Click(sender As Object, e As EventArgs) Handles btMoveRight.Click
-        Dim F = FormList(_idx)
-        FormList(_idx) = FormList(_idx + 1)
-        FormList(_idx + 1) = F
+        Dim F = My_Settings.Groups(_idx)
+        My_Settings.Groups(_idx) = My_Settings.Groups(_idx + 1)
+        My_Settings.Groups(_idx + 1) = F
 
-        FormList(_idx).myInstanceNumber -= 1
-        FormList(_idx + 1).myInstanceNumber += 1
+        My_Settings.Groups(_idx).myInstanceNumber -= 1
+        My_Settings.Groups(_idx + 1).myInstanceNumber += 1
 
         _idx += 1
 
@@ -254,12 +254,12 @@ Public Class frmImpostazioni
     End Sub
 
     Private Sub btMoveDown_Click(sender As Object, e As EventArgs) Handles btMoveLeft.Click
-        Dim F = FormList(_idx)
-        FormList(_idx) = FormList(_idx - 1)
-        FormList(_idx - 1) = F
+        Dim F = My_Settings.Groups(_idx)
+        My_Settings.Groups(_idx) = My_Settings.Groups(_idx - 1)
+        My_Settings.Groups(_idx - 1) = F
 
-        FormList(_idx).myInstanceNumber += 1
-        FormList(_idx - 1).myInstanceNumber -= 1
+        My_Settings.Groups(_idx).myInstanceNumber += 1
+        My_Settings.Groups(_idx - 1).myInstanceNumber -= 1
 
         _idx -= 1
 
@@ -289,7 +289,7 @@ Public Class frmImpostazioni
         'T &= "link:" & L & vbCrLf
 
 
-        'My.Computer.FileSystem.WriteAllText(MyPath & _link_file_name, T, True)
+        'My.Computer.FileSystem.WriteAllText(My_Settings.MyPath & My_Settings.LinkFileName, T, True)
 
         Dim frm As New frmElementsGroup
 
@@ -303,16 +303,16 @@ Public Class frmImpostazioni
 
 
         frm.PopolaForm()
-        FormList.Add(frm)
+        My_Settings.Groups.Add(frm)
 
-        numFormIndex.Maximum = FormList.Count
-        numFormIndex.Value = FormList.Count
+        numFormIndex.Maximum = My_Settings.Groups.Count
+        numFormIndex.Value = My_Settings.Groups.Count
 
         _idx = numFormIndex.Value - 1
 
 
         Dim c = 0
-        For Each F In FormList
+        For Each F In My_Settings.Groups
             F.myInstanceNumber = c
             F.PopolaForm()
             c += 1
@@ -324,8 +324,8 @@ Public Class frmImpostazioni
 
         frm.Show()
 
-        btDeleteForm.Enabled = FormList.Count > 1
-        btNewForm.Enabled = FormList.Count < 10
+        btDeleteForm.Enabled = My_Settings.Groups.Count > 1
+        btNewForm.Enabled = My_Settings.Groups.Count < 10
         Dim a = 0
 
 
@@ -334,7 +334,7 @@ Public Class frmImpostazioni
 
     Private Sub btDeleteForm_Click(sender As Object, e As EventArgs) Handles btDeleteForm.Click
 
-        If FormList.Count <= 1 Then Exit Sub
+        If My_Settings.Groups.Count <= 1 Then Exit Sub
 
         If MsgBox("Are you sure you want to delete the current group?", vbQuestion + vbOKCancel, "Detele") = vbCancel Then Exit Sub
 
@@ -355,22 +355,22 @@ Public Class frmImpostazioni
 
 
         If _idx = 0 Then
-            FormList.Remove(FormList(_idx))
-        ElseIf _idx = FormList.Count - 1 Then
-            FormList.Remove(FormList(_idx))
+            My_Settings.Groups.Remove(My_Settings.Groups(_idx))
+        ElseIf _idx = My_Settings.Groups.Count - 1 Then
+            My_Settings.Groups.Remove(My_Settings.Groups(_idx))
             _idx -= 1
-            numFormIndex.Value = FormList.Count
+            numFormIndex.Value = My_Settings.Groups.Count
         Else
-            FormList.Remove(FormList(_idx))
+            My_Settings.Groups.Remove(My_Settings.Groups(_idx))
         End If
 
-        numFormIndex.Maximum = FormList.Count
+        numFormIndex.Maximum = My_Settings.Groups.Count
 
         Dim c = 0
 
         WriteShorcutFile()
 
-        For Each F In FormList
+        For Each F In My_Settings.Groups
             F.myInstanceNumber = c
             F.PopolaForm()
             c += 1
@@ -380,13 +380,13 @@ Public Class frmImpostazioni
 
         'LoadGroupsConfiguration()
 
-        'For Each F In FormList
+        'For Each F In My_Settings.Groups
         '    F.Show()
         'Next
 
 
-        btDeleteForm.Enabled = FormList.Count > 1
-        btNewForm.Enabled = FormList.Count < 10
+        btDeleteForm.Enabled = My_Settings.Groups.Count > 1
+        btNewForm.Enabled = My_Settings.Groups.Count < 10
     End Sub
 
 
@@ -398,7 +398,7 @@ Public Class frmImpostazioni
 
         If chk.Checked Then
             Dim El As Element
-            For Each El In FormList(_idx).ElementList
+            For Each El In My_Settings.Groups(_idx).ElementList
                 If El.Link = folder Then
                     Exit Sub
                 End If
@@ -409,23 +409,23 @@ Public Class frmImpostazioni
             El = New Element(T)
             El.Element_Type = Element.ElementType.special_folder
 
-            FormList(_idx).ElementList.Add(El)
+            My_Settings.Groups(_idx).ElementList.Add(El)
 
-            FormList(_idx).Aggiungi_Elemento(El)
+            My_Settings.Groups(_idx).Aggiungi_Elemento(El)
 
-            FormList(_idx).PortaElementoAllInizio(El)
+            My_Settings.Groups(_idx).PortaElementoAllInizio(El)
 
         Else
-            For Each El In FormList(_idx).ElementList
+            For Each El In My_Settings.Groups(_idx).ElementList
                 If El.Link = folder Then
-                    FormList(_idx).ElementList.Remove(El)
+                    My_Settings.Groups(_idx).ElementList.Remove(El)
                     Exit Sub
                 End If
             Next
         End If
 
         WriteShorcutFile()
-        'FormList(_idx).PopolaForm()
+        'My_Settings.Groups(_idx).PopolaForm()
 
 
     End Sub
@@ -439,8 +439,8 @@ Public Class frmImpostazioni
             lbColorClipboard.BackColor = OCD.Color
         End If
 
-        _clipboard_close_color = lbColorClipboard.BackColor
-        frmMultiClipboard.ClosedColor = _clipboard_close_color
+        My_Settings.ClipboardCloseColor = lbColorClipboard.BackColor
+        frmMultiClipboard.ClosedColor = My_Settings.ClipboardCloseColor
 
         frmMultiClipboard.PopolaForm()
     End Sub
@@ -454,8 +454,8 @@ Public Class frmImpostazioni
             lbBackColorClipboard.BackColor = OCD.Color
         End If
 
-        _clipboard_open_color = lbBackColorClipboard.BackColor
-        frmMultiClipboard.OpenedColor = _clipboard_open_color
+        My_Settings.ClipboardOpenColor  = lbBackColorClipboard.BackColor
+        frmMultiClipboard.OpenedColor = My_Settings.ClipboardOpenColor 
 
         frmMultiClipboard.PopolaForm()
     End Sub
@@ -479,8 +479,8 @@ Public Class frmImpostazioni
 
         If Not primo_giro_fatto Then Exit Sub
 
-        _clipboard_elements_number = numElementsNumber.Value
-        frmMultiClipboard.ElementsNumber = _clipboard_elements_number
+       My_Settings.ClipboardElementsNumber = numElementsNumber.Value
+        frmMultiClipboard.ElementsNumber =My_Settings.ClipboardElementsNumber
 
     End Sub
 
@@ -496,8 +496,8 @@ Public Class frmImpostazioni
             lbColorFixed.BackColor = OCD.Color
         End If
 
-        _fixedtext_close_color = lbColorFixed.BackColor
-        frmFixedText.ClosedColor = _fixedtext_close_color
+        My_Settings.FixedTextCloseColor = lbColorFixed.BackColor
+        frmFixedText.ClosedColor = My_Settings.FixedTextCloseColor
 
         frmFixedText.PopolaForm()
     End Sub
@@ -511,8 +511,8 @@ Public Class frmImpostazioni
             lbBackColorFixed.BackColor = OCD.Color
         End If
 
-        _fixedtext_open_color = lbBackColorFixed.BackColor
-        frmFixedText.BackColor = _fixedtext_open_color
+        My_Settings.FixedTextOpenColor = lbBackColorFixed.BackColor
+        frmFixedText.BackColor = My_Settings.FixedTextOpenColor
 
         frmFixedText.PopolaForm()
     End Sub
@@ -526,8 +526,8 @@ Public Class frmImpostazioni
             lbTextColorFixed.BackColor = OCD.Color
         End If
 
-        _fixedtext_text_color = lbTextColorFixed.BackColor
-        frmFixedText.TextColor = _fixedtext_text_color
+        My_Settings.FixedTextTextColor = lbTextColorFixed.BackColor
+        frmFixedText.TextColor = My_Settings.FixedTextTextColor
 
         frmFixedText.PopolaForm()
     End Sub

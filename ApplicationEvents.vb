@@ -36,21 +36,22 @@ Namespace My
 
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = FormList(0)
+            Me.MainForm = My_Settings.Groups(0)
         End Sub
 
         Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
 
             Dim a = 0
+            My_Settings.MyPath = System.AppDomain.CurrentDomain.BaseDirectory
 
-            If Not My.Computer.FileSystem.FileExists(MyPath & "cfg.ini") Then
+            If Not My.Computer.FileSystem.FileExists(My_Settings.MyPath & "cfg.ini") Then
                 Dim S As String = "[main]"
-                S &= vbCrLf & "_link_file_name=Shorcuts.shr"
+                S &= vbCrLf & "My_Settings.LinkFileName=Shorcuts.shr"
                 S &= vbCrLf & "_width=30"
-                S &= vbCrLf & "_offset_position=0"
+                S &= vbCrLf & "My_Settings.DefaultOffset=0"
                 S &= vbCrLf & ""
 
-                My.Computer.FileSystem.WriteAllText(MyPath & "cfg.ini", S, False)
+                My.Computer.FileSystem.WriteAllText(My_Settings.MyPath & "cfg.ini", S, False)
             End If
 
             Load_CFG()
@@ -58,36 +59,36 @@ Namespace My
             CreateSpecialFoldersLists()
 
 
-            If Not My.Computer.FileSystem.FileExists(MyPath & _link_file_name) Then
+            If Not My.Computer.FileSystem.FileExists(My_Settings.MyPath & My_Settings.LinkFileName) Then
                 GenereteNewFormCFG()
             End If
 
             LoadGroupsConfiguration()
 
-            For Each F In FormList
+            For Each F In My_Settings.Groups
                 F.Show()
             Next
 
 
             frmFixedText.myInstanceNumber = frmElementsGroup.myInstanceNumber
-            frmFixedText.TextColor = _fixedtext_text_color
-            frmFixedText.OpenedColor = _fixedtext_open_color
-            frmFixedText.ClosedColor = _fixedtext_close_color
-            frmFixedText.ElementsNumber = _fixedtext_elements_number
+            frmFixedText.TextColor = My_Settings.FixedTextTextColor
+            frmFixedText.OpenedColor = My_Settings.FixedTextOpenColor
+            frmFixedText.ClosedColor = My_Settings.FixedTextCloseColor
+            frmFixedText.ElementsNumber = My_Settings.FixedTextElementsNumber
 
             frmFixedText.Show()
 
             frmMultiClipboard.myInstanceNumber = frmElementsGroup.myInstanceNumber + 1
-            frmMultiClipboard.TextColor = _clipboard_text_color
-            frmMultiClipboard.OpenedColor = _clipboard_open_color
-            frmMultiClipboard.ClosedColor = _clipboard_close_color
-            frmMultiClipboard.ElementsNumber = _clipboard_elements_number
+            frmMultiClipboard.TextColor = My_Settings.ClipboardTextColor
+            frmMultiClipboard.OpenedColor = My_Settings.ClipboardOpenColor
+            frmMultiClipboard.ClosedColor = My_Settings.ClipboardCloseColor
+            frmMultiClipboard.ElementsNumber = My_Settings.ClipboardElementsNumber
 
             frmMultiClipboard.Show()
 
 
 
-            total_width = FormList.Count * (_width + distance_between_form_elements) - distance_between_form_elements
+            My_Settings.TotalWidth = My_Settings.Groups.Count * (_width + My_Settings.SpaceBetweenBars) - My_Settings.SpaceBetweenBars
 
             'Form1.Show()
 

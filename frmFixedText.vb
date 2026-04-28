@@ -170,7 +170,7 @@ Public Class frmFixedText
 
     'Public ReadOnly Property FormOpened
     '    Get
-    '        If Me.Height > mySize.Height Then
+    '        If Me.Height > My_Settings.BarSize.Height Then
 
     '        End If
     '    End Get
@@ -193,9 +193,9 @@ Public Class frmFixedText
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Me.Size = mySize
-        'Me.Location = New Point((My.Computer.Screen.WorkingArea.Width / 2) + _offset_position + (Me.Width + _space_between_forms) * _myInstanceNumber, 0)
-        Me.Location = New Point((My.Computer.Screen.WorkingArea.Width / 2) + _offset_position + (Me.Width + distance_between_form_elements) * _myInstanceNumber, 0)
+        Me.Size = My_Settings.BarSize
+        'Me.Location = New Point((My.Computer.Screen.WorkingArea.Width / 2) + My_Settings.DefaultOffset + (Me.Width + _space_between_forms) * _myInstanceNumber, 0)
+        Me.Location = New Point((My.Computer.Screen.WorkingArea.Width / 2) + My_Settings.DefaultOffset + (Me.Width + My_Settings.SpaceBetweenBars) * _myInstanceNumber, 0)
         Me.AllowDrop = True
         Me.TopMost = True
         Me.BackColor = _closed_color
@@ -282,7 +282,7 @@ Public Class frmFixedText
 
             '#Region "Check almeno un form aperto"
             '            Dim trovato As Boolean = False
-            '            For Each frm As frmElementsGroup In FormList
+            '            For Each frm As frmElementsGroup In My_Settings.Groups
             '                If frm.FormOpened Then
             '                    trovato = True
             '                End If
@@ -315,8 +315,8 @@ Public Class frmFixedText
             Dim offset_border = 0
             'InForm = p.X >= Me.Left - offset_border And p.X <= Me.Left + Me.Width + offset_border And p.Y >= Me.Top - offset_border And p.Y <= Me.Top + Me.Height + offset_border
 
-            InForm = p.X >= Me.Left And p.X <= Me.Left + mySize.Width And p.Y >= Me.Top And p.Y <= Me.Top + mySize.Height _
-            Or p.X >= Me.Left And p.X <= Me.Left + Me.Width And p.Y >= Me.Top + mySize.Height And p.Y <= Me.Top + Me.Height
+            InForm = p.X >= Me.Left And p.X <= Me.Left + My_Settings.BarSize.Width And p.Y >= Me.Top And p.Y <= Me.Top + My_Settings.BarSize.Height _
+            Or p.X >= Me.Left And p.X <= Me.Left + Me.Width And p.Y >= Me.Top + My_Settings.BarSize.Height And p.Y <= Me.Top + Me.Height
 
             If (InForm Or LockOpen = _myInstanceNumber) Then
 
@@ -330,9 +330,9 @@ Public Class frmFixedText
                 FormOpened = True
                 ActualFormOpened = _myInstanceNumber
 
-                For Each frm As frmElementsGroup In FormList
+                For Each frm As frmElementsGroup In My_Settings.Groups
                     If Not frm.Equals(Me) Then
-                        frm.Size = mySize
+                        frm.Size = My_Settings.BarSize
                     End If
                 Next
 
@@ -341,8 +341,8 @@ Public Class frmFixedText
             ElseIf Not InForm And LockOpen <> _myInstanceNumber Then
 
                 Me.BackColor = _closed_color
-                Me.Size = mySize
-                Me.Location = New Point((My.Computer.Screen.WorkingArea.Width / 2) - (total_width / 2) + _offset_position + (Me.Width + distance_between_form_elements) * _myInstanceNumber, 0)
+                Me.Size = My_Settings.BarSize
+                Me.Location = New Point((My.Computer.Screen.WorkingArea.Width / 2) - (My_Settings.TotalWidth / 2) + My_Settings.DefaultOffset + (Me.Width + My_Settings.SpaceBetweenBars) * _myInstanceNumber, 0)
                 FormOpened = False
                 If ActualFormOpened = _myInstanceNumber Then ActualFormOpened = -1
                 Me.Invalidate()

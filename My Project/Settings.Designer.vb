@@ -31,7 +31,7 @@ Namespace My
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)> _
     Private Shared Sub AutoSaveSettings(sender As Global.System.Object, e As Global.System.EventArgs)
         If My.Application.SaveMySettingsOnExit Then
-            My.Settings.Save()
+            My.My_Settings.Save()
         End If
     End Sub
 #End If
@@ -66,7 +66,7 @@ Namespace My
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
         Friend ReadOnly Property Settings() As Global.Scorciatoie.My.MySettings
             Get
-                Return Global.Scorciatoie.My.MySettings.Default
+                Return Global.Scorciatoie.My.My_Settings.Default
             End Get
         End Property
     End Module
